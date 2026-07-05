@@ -11,6 +11,9 @@ A fast and modular reconnaissance tool for Arch Linux systems. Designed for syst
 - Modular design for easy maintenance
 - Organized timestamped reports
 - Lightweight and dependency-free
+- Basic rootkit detection checks
+- Stealth mode (`--stealth` flag)
+- Colored output with progress indicators
 
 ## Usage
 
