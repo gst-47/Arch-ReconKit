@@ -4,7 +4,7 @@ import time
 
 def generate_license_key(user_id, expiry_days=30):
     """Generate a signed license key"""
-    secret = "ArchReconSecret2026"  # غيّره إلى سر خاص بك
+    secret = "ArchReconSecret2026"  # you can change it
     expiry = int(time.time()) + (expiry_days * 86400)
     data = f"{user_id}|{expiry}|{secret}"
     signature = hashlib.sha256(data.encode()).hexdigest()[:16]
