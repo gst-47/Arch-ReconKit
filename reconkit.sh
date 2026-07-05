@@ -42,6 +42,9 @@ echo -e "${GREEN}[3/4]${NC} Network Information..."
 echo -e "${GREEN}[4/4]${NC} Processes..."
 ./modules/processes.sh "$OUTPUT_DIR/processes.txt"
 
+echo -e "${GREEN}[+] Rootkit Check...${NC}"
+./modules/rootkit_check.sh "$OUTPUT_DIR/rootkit_check.txt"
+
 echo -e "${GREEN}[+] All modules completed successfully!${NC}"
 echo -e "📁 Reports saved in: ${YELLOW}$OUTPUT_DIR${NC}"
 echo -e "${RED}⚠️  Use only for legal and authorized purposes.${NC}"
