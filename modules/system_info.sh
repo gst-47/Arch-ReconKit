@@ -1,11 +1,16 @@
 #!/bin/bash
-# System Information Module
 
-echo "=== System Information ===" > "$1"
-uname -a >> "$1"
-cat /etc/os-release >> "$1"
-hostnamectl >> "$1"
-uptime >> "$1"
-df -h >> "$1"
-free -h >> "$1"
-echo "System info collected." >> "$1"
+{
+    echo "{"
+    echo "  \"tool\": \"Arch-ReconKit\","
+    echo "  \"module\": \"system_info\","
+    echo "  \"timestamp\": \"$(date)\","
+    echo "  \"data\": {"
+    echo "    \"uname\": \"$(uname -a)\","
+    echo "    \"os_release\": \"$(cat /etc/os-release | tr '\n' ' ')\","
+    echo "    \"uptime\": \"$(uptime)\""
+    echo "  }"
+    echo "}"
+} > "$1.json"
+
+echo "System info collected." > "$1.txt"
