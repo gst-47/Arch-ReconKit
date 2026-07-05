@@ -68,4 +68,9 @@ echo -e "📁 Reports saved in: ${YELLOW}$OUTPUT_DIR${NC}"
 echo -e "📜 Log file: ${YELLOW}$LOG_FILE${NC}"
 echo -e "${RED}⚠️  Use only for legal and authorized purposes.${NC}"
 
+# Generate JSON Report
+log "Generating JSON report"
+python3 report_generator.py "$OUTPUT_DIR"
+
+
 log "Session ended"
